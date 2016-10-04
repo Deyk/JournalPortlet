@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.softwerke.srv">
+	<author>Sasha</author>
+	<namespace>journal</namespace>
+	
+	<entity name="MyArticle" local-service="true" uuid="true">
+
+		<column name="myArticleId" type="long" primary="true"></column>
+		<column name="myArticleName" type="String"></column>
+		<column name="myArticleContent" type="String"></column>
+		<column name="myArticleRefuseComment" type="String"></column>
+		<column name="myArticleStatus" type="int"></column>
+		<column name="isMyArticlePublished" type="boolean"></column>
+	</entity>
+	
+	
+	<entity name="MyReview" local-service="true" uuid="true">
+	
+		<column name="myReviewId" type="long" primary="true"></column>
+		<column name="myReviewDateCreation" type="Date"></column>
+		<column name="myReviewDateModification" type="Date"></column>
+		<column name="myReviewArticleId" type="long"></column>
+		<column name="MyReviewName" type="String"></column>
+		<column name="MyReviewContent" type="String"></column>
+	</entity>
+</service-builder>

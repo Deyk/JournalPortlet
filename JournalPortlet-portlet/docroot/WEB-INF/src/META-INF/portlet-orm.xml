@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.softwerke.srv.model.impl.MyArticleModelImpl">
+		<attributes>
+			<id name="myArticleId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="myArticleName" />
+			<basic name="myArticleContent" />
+			<basic name="myArticleRefuseComment" />
+			<basic name="myArticleStatus" />
+			<basic name="isMyArticlePublished" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.softwerke.srv.model.impl.MyReviewModelImpl">
+		<attributes>
+			<id name="myReviewId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="myReviewDateCreation">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="myReviewDateModification">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="myReviewArticleId" />
+			<basic name="MyReviewName" />
+			<basic name="MyReviewContent" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.softwerke.srv.model.impl.MyArticleImpl" name="MyArticle">
+		<table name="journal_MyArticle" />
+		<attributes />
+	</entity>
+	<entity class="com.softwerke.srv.model.impl.MyReviewImpl" name="MyReview">
+		<table name="journal_MyReview" />
+		<attributes />
+	</entity>
+</entity-mappings>

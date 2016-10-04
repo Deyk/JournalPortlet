@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.softwerke.srv.model.MyArticle" />
+	<import class="com.softwerke.srv.model.MyReview" />
+	<class name="com.softwerke.srv.model.impl.MyArticleImpl" table="journal_MyArticle">
+		<cache usage="read-write" />
+		<id name="myArticleId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="myArticleName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="myArticleContent" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="myArticleRefuseComment" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="myArticleStatus" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="isMyArticlePublished" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.softwerke.srv.model.impl.MyReviewImpl" table="journal_MyReview">
+		<cache usage="read-write" />
+		<id name="myReviewId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="myReviewDateCreation" type="org.hibernate.type.TimestampType" />
+		<property name="myReviewDateModification" type="org.hibernate.type.TimestampType" />
+		<property name="myReviewArticleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="MyReviewName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MyReviewContent" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

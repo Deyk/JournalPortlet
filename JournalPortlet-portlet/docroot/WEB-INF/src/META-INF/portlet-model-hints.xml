@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.softwerke.srv.model.MyArticle">
+		<field name="uuid" type="String" />
+		<field name="myArticleId" type="long" />
+		<field name="myArticleName" type="String" />
+		<field name="myArticleContent" type="String" />
+		<field name="myArticleRefuseComment" type="String" />
+		<field name="myArticleStatus" type="int" />
+		<field name="isMyArticlePublished" type="boolean" />
+	</model>
+	<model name="com.softwerke.srv.model.MyReview">
+		<field name="uuid" type="String" />
+		<field name="myReviewId" type="long" />
+		<field name="myReviewDateCreation" type="Date" />
+		<field name="myReviewDateModification" type="Date" />
+		<field name="myReviewArticleId" type="long" />
+		<field name="MyReviewName" type="String" />
+		<field name="MyReviewContent" type="String" />
+	</model>
+</model-hints>

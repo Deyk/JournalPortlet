@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.softwerke.srv.service.MyArticleLocalService" class="com.softwerke.srv.service.impl.MyArticleLocalServiceImpl" />
+	<bean id="com.softwerke.srv.service.MyArticleService" class="com.softwerke.srv.service.impl.MyArticleServiceImpl" />
+	<bean id="com.softwerke.srv.service.persistence.MyArticlePersistence" class="com.softwerke.srv.service.persistence.MyArticlePersistenceImpl" parent="basePersistence" />
+	<bean id="com.softwerke.srv.service.MyReviewLocalService" class="com.softwerke.srv.service.impl.MyReviewLocalServiceImpl" />
+	<bean id="com.softwerke.srv.service.MyReviewService" class="com.softwerke.srv.service.impl.MyReviewServiceImpl" />
+	<bean id="com.softwerke.srv.service.persistence.MyReviewPersistence" class="com.softwerke.srv.service.persistence.MyReviewPersistenceImpl" parent="basePersistence" />
+</beans>
