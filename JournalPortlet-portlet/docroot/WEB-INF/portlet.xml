@@ -6,17 +6,19 @@
 		<portlet-name>journal</portlet-name>
 		<display-name>Journal</display-name>
 		<portlet-class>
-			com.softwerke.journalportlet.JournalPortlet
+			com.softwerke.journalportlet.journal.portlet.JournalPortlet
 		</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/view.jsp</value>
+			<value>/html/view_common.jsp</value>
 		</init-param>
+	
 		<expiration-cache>0</expiration-cache>
 		<supports>
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
 		</supports>
+			<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
 			<title>Journal</title>
 			<short-title>Journal</short-title>

@@ -1,0 +1,77 @@
+
+.article {
+	font-style: italic;
+	min-width: 150px;
+	display: none;
+}
+
+.article__content {
+	max-height: 50px;
+	overflow: hidden;
+}
+
+.article__content_color-view {
+	background-color: yellow;
+}
+
+.article__content_color-edit {
+	background-color: rgb(103, 247, 46 );
+}
+
+.article__content_color-delete {
+	background-color: #fb5757;
+}
+
+.article__content_color-confirm {
+	background-color: #ee82ee;
+}
+
+.article__content_color-publish {
+	background-color: #ffefd5;
+}
+
+.article__content_color-unpublish {
+	background-color: #e5cb00
+}
+
+.article__content_color-refuse{
+	background-color: #6b8e23;
+}
+
+.article__icon-menu {
+}
+
+.article-view {
+	font-style: oblique;
+}
+
+.article-view-refused {
+	min-height: 20px;
+	padding-left: 19px;
+}
+
+.article-view-refused_color-red {
+	color: red;
+}
+
+.navigation {
+	min-width: 150px;
+}
+
+.navigation__item {
+	text-align: center;
+}
+.morecontent {
+	display: none;
+}
+.loadMore {
+	color: red;
+	font-size: large;
+	border-radius: 50%;
+}
+
+.showLess {
+	color: green;
+	font-size: large;
+	border-radius: 50%;
+}

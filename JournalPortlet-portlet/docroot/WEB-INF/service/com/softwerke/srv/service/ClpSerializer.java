@@ -25,8 +25,8 @@ import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.BaseModel;
 
-import com.softwerke.srv.model.MyArticleClp;
-import com.softwerke.srv.model.MyReviewClp;
+import com.softwerke.srv.model.ArticleClp;
+import com.softwerke.srv.model.ReviewClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -103,12 +103,12 @@ public class ClpSerializer {
 
 		String oldModelClassName = oldModelClass.getName();
 
-		if (oldModelClassName.equals(MyArticleClp.class.getName())) {
-			return translateInputMyArticle(oldModel);
+		if (oldModelClassName.equals(ArticleClp.class.getName())) {
+			return translateInputArticle(oldModel);
 		}
 
-		if (oldModelClassName.equals(MyReviewClp.class.getName())) {
-			return translateInputMyReview(oldModel);
+		if (oldModelClassName.equals(ReviewClp.class.getName())) {
+			return translateInputReview(oldModel);
 		}
 
 		return oldModel;
@@ -126,20 +126,20 @@ public class ClpSerializer {
 		return newList;
 	}
 
-	public static Object translateInputMyArticle(BaseModel<?> oldModel) {
-		MyArticleClp oldClpModel = (MyArticleClp)oldModel;
+	public static Object translateInputArticle(BaseModel<?> oldModel) {
+		ArticleClp oldClpModel = (ArticleClp)oldModel;
 
-		BaseModel<?> newModel = oldClpModel.getMyArticleRemoteModel();
+		BaseModel<?> newModel = oldClpModel.getArticleRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
 		return newModel;
 	}
 
-	public static Object translateInputMyReview(BaseModel<?> oldModel) {
-		MyReviewClp oldClpModel = (MyReviewClp)oldModel;
+	public static Object translateInputReview(BaseModel<?> oldModel) {
+		ReviewClp oldClpModel = (ReviewClp)oldModel;
 
-		BaseModel<?> newModel = oldClpModel.getMyReviewRemoteModel();
+		BaseModel<?> newModel = oldClpModel.getReviewRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -163,9 +163,8 @@ public class ClpSerializer {
 
 		String oldModelClassName = oldModelClass.getName();
 
-		if (oldModelClassName.equals(
-					"com.softwerke.srv.model.impl.MyArticleImpl")) {
-			return translateOutputMyArticle(oldModel);
+		if (oldModelClassName.equals("com.softwerke.srv.model.impl.ArticleImpl")) {
+			return translateOutputArticle(oldModel);
 		}
 		else if (oldModelClassName.endsWith("Clp")) {
 			try {
@@ -200,9 +199,8 @@ public class ClpSerializer {
 			}
 		}
 
-		if (oldModelClassName.equals(
-					"com.softwerke.srv.model.impl.MyReviewImpl")) {
-			return translateOutputMyReview(oldModel);
+		if (oldModelClassName.equals("com.softwerke.srv.model.impl.ReviewImpl")) {
+			return translateOutputReview(oldModel);
 		}
 		else if (oldModelClassName.endsWith("Clp")) {
 			try {
@@ -317,33 +315,33 @@ public class ClpSerializer {
 			return new SystemException();
 		}
 
-		if (className.equals("com.softwerke.srv.NoSuchMyArticleException")) {
-			return new com.softwerke.srv.NoSuchMyArticleException();
+		if (className.equals("com.softwerke.srv.NoSuchArticleException")) {
+			return new com.softwerke.srv.NoSuchArticleException();
 		}
 
-		if (className.equals("com.softwerke.srv.NoSuchMyReviewException")) {
-			return new com.softwerke.srv.NoSuchMyReviewException();
+		if (className.equals("com.softwerke.srv.NoSuchReviewException")) {
+			return new com.softwerke.srv.NoSuchReviewException();
 		}
 
 		return throwable;
 	}
 
-	public static Object translateOutputMyArticle(BaseModel<?> oldModel) {
-		MyArticleClp newModel = new MyArticleClp();
+	public static Object translateOutputArticle(BaseModel<?> oldModel) {
+		ArticleClp newModel = new ArticleClp();
 
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
-		newModel.setMyArticleRemoteModel(oldModel);
+		newModel.setArticleRemoteModel(oldModel);
 
 		return newModel;
 	}
 
-	public static Object translateOutputMyReview(BaseModel<?> oldModel) {
-		MyReviewClp newModel = new MyReviewClp();
+	public static Object translateOutputReview(BaseModel<?> oldModel) {
+		ReviewClp newModel = new ReviewClp();
 
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
-		newModel.setMyReviewRemoteModel(oldModel);
+		newModel.setReviewRemoteModel(oldModel);
 
 		return newModel;
 	}

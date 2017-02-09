@@ -2,5 +2,6 @@
 <!DOCTYPE project>
 
 <project name="JournalPortlet-portlet" basedir="." default="deploy">
-	<import file="../build-common-portlet.xml" />
+    <import file="../build-common-portlet.xml" />
+    <property file="build.properties"/>
 </project>

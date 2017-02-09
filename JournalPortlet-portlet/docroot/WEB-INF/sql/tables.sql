@@ -1,19 +1,21 @@
-create table journal_MyArticle (
+create table new_perfect_journal_Article (
 	uuid_ VARCHAR(75) null,
-	myArticleId LONG not null primary key,
-	myArticleName VARCHAR(75) null,
-	myArticleContent VARCHAR(75) null,
-	myArticleRefuseComment VARCHAR(75) null,
-	myArticleStatus INTEGER,
-	isMyArticlePublished BOOLEAN
+	articleId LONG not null primary key,
+	groupId LONG,
+	articleName VARCHAR(75) null,
+	articleContent TEXT null,
+	articleRefuseComment VARCHAR(75) null,
+	articleStatus INTEGER,
+	isArticlePublished BOOLEAN,
+	userId LONG
 );
 
-create table journal_MyReview (
+create table new_perfect_journal_Review (
 	uuid_ VARCHAR(75) null,
-	myReviewId LONG not null primary key,
-	myReviewDateCreation DATE null,
-	myReviewDateModification DATE null,
-	myReviewArticleId LONG,
-	MyReviewName VARCHAR(75) null,
-	MyReviewContent VARCHAR(75) null
+	reviewId LONG not null primary key,
+	groupId LONG,
+	reviewName VARCHAR(75) null,
+	reviewContent TEXT null,
+	articleId LONG,
+	userId LONG
 );

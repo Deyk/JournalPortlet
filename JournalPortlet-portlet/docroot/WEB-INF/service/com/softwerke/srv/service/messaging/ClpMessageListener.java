@@ -17,11 +17,11 @@ package com.softwerke.srv.service.messaging;
 import com.liferay.portal.kernel.messaging.BaseMessageListener;
 import com.liferay.portal.kernel.messaging.Message;
 
+import com.softwerke.srv.service.ArticleLocalServiceUtil;
+import com.softwerke.srv.service.ArticleServiceUtil;
 import com.softwerke.srv.service.ClpSerializer;
-import com.softwerke.srv.service.MyArticleLocalServiceUtil;
-import com.softwerke.srv.service.MyArticleServiceUtil;
-import com.softwerke.srv.service.MyReviewLocalServiceUtil;
-import com.softwerke.srv.service.MyReviewServiceUtil;
+import com.softwerke.srv.service.ReviewLocalServiceUtil;
+import com.softwerke.srv.service.ReviewServiceUtil;
 
 /**
  * @author Sasha
@@ -38,12 +38,12 @@ public class ClpMessageListener extends BaseMessageListener {
 
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
-			MyArticleLocalServiceUtil.clearService();
+			ArticleLocalServiceUtil.clearService();
 
-			MyArticleServiceUtil.clearService();
-			MyReviewLocalServiceUtil.clearService();
+			ArticleServiceUtil.clearService();
+			ReviewLocalServiceUtil.clearService();
 
-			MyReviewServiceUtil.clearService();
+			ReviewServiceUtil.clearService();
 		}
 	}
 }
